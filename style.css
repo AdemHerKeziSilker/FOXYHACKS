@@ -1,0 +1,862 @@
+/*----------- content ---------------
+
+1. DEFAULT
+2. PRELOADER
+3. HEADER
+4. HOME
+5. ADVANTAGES
+6. BUY
+
+*/
+
+
+/*===============
+    1. DEFAULT
+=================*/
+
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(10px);
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-title {
+    animation: slide-in 1.5s forwards;
+}
+
+.shake-animation {
+    animation: shake 2s, shake-stop 0.3s 2s;
+}
+
+@keyframes shake-stop {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@charset "UTF-8";
+
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: #292e38;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #292e38;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #007bff;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+html {
+    height: 100vh;
+    width: 100%;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: white;
+    background-color: #04162D;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+section {
+    height: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+span {
+    color: #007bff;
+}
+
+.container {
+    width: 1170px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 0 auto;
+}
+
+/*=================
+    2. PRELOADER
+===================*/
+
+/*===============
+    3. HEADER
+=================*/
+
+#header {
+    width: 100%;
+    position: fixed;
+    z-index: 1030;
+}
+
+.navbar {
+    padding-top: 20px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
+
+.bolum-arka-plan {
+    background: linear-gradient(to right, #3dd0d8 0%, rgba(124, 105, 227, 0.64) 100%);
+}
+
+.yuvarlak-resim {
+    border-radius: 32%; /* Yuvarlak köşeler oluşturur */
+    width: 100px; /* Resmin genişliği */
+    height: 100px; /* Resmin yüksekliği */
+    object-fit: cover; /* Resmi kesmeden sığdırır */
+	border: 2px solid #201c34; /* 2 piksel kalınlığında kırmızı dış çizgi */
+}
+
+.navbar-brand {
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    line-height: 1;
+}
+
+.navbar-brand a span,
+.home-info span {
+    font-size: 45px;
+    display: inline-flex;
+}
+
+.navbar-nav {
+    margin-left: auto;
+    margin-top: 5px;
+}
+
+.navbar-nav a {
+    margin-right: 30px;
+}
+
+.top-bar {
+    background-color: rgba(24, 20, 36, 0.5);
+    padding: 30px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.logo img {
+    width: 240px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 40px;
+    font-weight: bold;
+	font-family: 'Garamond', sans-serif; 
+}
+
+.navbar-nav a:last-child {
+    margin-right: 0px;
+}
+
+.navbar-nav a:hover {
+    color: #007bff;
+}
+
+
+.sticky_navigation {
+    background-color: #181824;
+    height: 90px;
+    -webkit-transition: all .4s ease-out;
+    -o-transition: all .4s ease-out;
+    transition: all .4s ease-out;
+    -webkit-box-shadow: 0 3px 4.6px .3px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3px 4.6px .3px rgba(0, 0, 0, 0.25)
+}
+
+/*===============
+    4. HOME
+=================*/
+
+#home {
+    z-index: 1030;
+}
+
+.bg-home {
+    position: relative;
+    background-image: #22063b;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+.logo-image {
+    width: 30px;
+    height: auto;
+    margin-right: 1px;
+    margin-left: 1px;
+    margin-top: 1px;
+}
+
+.bg-home::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.bg-home::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0, 123, 255, .8), rgba(0, 0, 0, .1));
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.bg-inner {
+    width: 100%;
+    height: 100%;
+    background: #1e1d32;
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+
+.home-content .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-info {
+    text-align: left;
+    width: 50%;
+}
+
+.home-info h1 {
+    font-size: 45px;
+    letter-spacing: 7px;
+}
+
+
+.home-info p {
+    letter-spacing: 1.4px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    text-transform: none;
+}
+
+.menu > .flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+  .brk-btn {
+    position: relative;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    background-color: transparent;
+    color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    line-height: 48px;
+    min-width: 170px;
+    width: max-content;
+    transition: .35s;
+    margin-right: 20px;
+  }
+
+  .contact-btn {
+    color: #ffffff;
+  }
+
+  .brk-btn:before,
+  .brk-btn:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: #007bff;
+    transition: width 0.35s;
+  }
+
+  .brk-btn:before {
+    top: 0;
+    left: 0;
+  }
+
+  .brk-btn:after {
+    bottom: 0;
+    right: 0;
+  }
+
+  .brk-btn:hover:before,
+  .brk-btn:hover:after {
+    width: 50%;
+  }
+
+  .brk-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+
+.home-img {
+    max-width: 70%;
+}
+
+.buy-btn {
+    display: flex;
+}
+
+.brk-btnkod {
+    border: 1px solid #007bff;
+    color: #fff;
+    font-size: 11px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #007bff;
+	margin-bottom: 25px
+    line-height: 38px;
+    min-width: 150px;
+    width: max-content;
+    padding: 5px 11px;
+    transition: .35s;
+    margin-right: 15px;
+    box-shadow: 0 0 70px 0px rgba(0, 123, 255, .7);
+}
+
+.brk-btnkod:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.brk-btns {
+    border: 1px solid #007bff;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    line-height: 48px;
+    min-width: 170px;
+    width: max-content;
+    padding: 6px 12px;
+    transition: .35s;
+    margin-right: 20px;
+    box-shadow: 0 0 70px 0px rgba(0, 123, 255, .7);
+}
+
+.brk-btns:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.modern-design {
+    background-color: #f7f7f7; /* Arka plan rengini açık gri yapar */
+    padding: 20px; /* Kenar boşluğunu ekler */
+    border-radius: 10px; /* Kenarları yuvarlar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge ekler */
+    text-align: center; /* Metni ortalar */
+    color: #333; /* Metin rengini koyu gri yapar */
+}
+
+.ws_form {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 0 auto; /* Formu yatayda ortalamak için auto kullanın */
+    max-width: 600px; /* Maksimum genişliği ayarlayın */
+}
+
+/* Alt kısmı kısaltmak için gerektiğinde aşağıdaki stil ekleriz */
+.ws_col:last-child {
+    margin-bottom: 0; /* Son ws_col elemanının alt kenar boşluğunu kaldırır */
+}
+
+.ws_col {
+    margin-bottom: 20px; /* Elemanlar arası mesafeyi artıralım. */
+}
+
+.ws_label {
+    font-size: 16px; 
+    margin-bottom: 8px; /* Başlık ve giriş elemanı arasındaki mesafeyi ayarlayalım. */
+    display: block; 
+    color: #333; /* Başlıkları koyu gri yapalım. */
+}
+
+.form-control {
+    border: 1px solid #ddd; /* Sınırları daha yumuşak bir gri tonu yapalım. */
+    border-radius: 5px; /* Kenar yuvarlaklığını artıralım. */
+    height: 40px; 
+    font-size: 16px; 
+}
+
+/* Bilgilendirme metni için stil */
+.ws_col b {
+    display: block;
+    margin-top: 10px;
+}
+
+.scroll__down {
+    position: absolute;
+    left: 50%;
+    margin-left: -12.5px;
+    width: 25px;
+    height: 40px;
+    bottom: 35px;
+    z-index: 2
+}
+
+.custom-box {
+    display: flex;
+	
+    background-color: #292845;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+	margin: 120px;
+	
+}
+
+.content {
+    flex: 1;
+}
+
+.content h1 {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.image img {
+    max-width: 60%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.home-content .scroll__down svg {
+    width: 25px;
+    height: 40px
+}
+
+.scroll__down a {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: -12px;
+    border-left: 2px solid #007bff;
+    border-bottom: 2px solid #007bff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-animation: sdb05 1.5s infinite;
+    animation: sdb05 1.5s infinite;
+    box-sizing: border-box;
+}
+
+/*==================
+    5. 
+====================*/
+
+#advantages {
+    z-index: 1030;
+}
+
+.bg-advantages {
+    position: relative;
+    background-image: url(/img/bg-advantages.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.bg-advantages::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0, 123, 255, .5), rgba(0, 123, 255, .5));
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.bg-inner {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+}
+
+.advantages-content {
+    padding-top: 150px;
+}
+
+.advantages-item {
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.advantages-item h1 {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.advantages-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.advantages-item {
+    text-align: center;
+    position: relative;
+	margin: 20px; /* Resimler arasındaki boşluğu ayarlar */
+    top: -250px; /* Resimleri biraz yukarı taşır */
+}
+
+.advantages-item h1 {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+	
+	
+}
+
+.advantages-item .icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #6c60c0; /* Yeni border özelliği */
+}
+
+.advantages-item p {
+	
+    text-align: center;
+    margin: 0;
+    color: white;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+}
+
+.content-title {
+    text-align: center;
+}
+
+.content-title h1 {
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 20px
+}
+
+.line {
+    height: 5px;
+    width: 100px;
+    display: inline-block;
+    border-radius: 10px;
+    background: #007bff;
+    margin-bottom: 40px;
+}
+
+/*==============
+    6. BUY
+================*/
+
+
+#buy {
+    z-index: 1030;
+}
+
+.bg-buy {
+    position: relative;
+    background-image: url(../img/bg-advantages.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.bg-buy::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0, 123, 255, .8), rgba(0, 123, 255, .5));
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.buy-content {
+    padding-top: 150px;
+}
+
+.buy-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.buy-items {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.buy-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 32%;
+    min-height: 400px;
+    padding: 15px 25px 15px 25px;
+    border-radius: 10px;
+    border: 1px solid #007bff;
+    background-image: linear-gradient(to top, rgba(0, 123, 255, .6), rgba(0, 123, 390, .3));
+    margin-right: 10px;
+    /*box-shadow: 0 0 70px 0px rgba(253, 126, 20, .5);*/
+}
+
+.buy-item:last-child {
+    margin-right: 0;
+}
+
+.buy-item h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.buy-item .list-func p {
+    margin-bottom: 10px;
+}
+
+.list-func svg {
+    margin-right: 5px;
+}
+
+.buy-item .list-func p:last-child,
+.buy-item .list-func span:last-child {
+    margin-bottom: 0;
+}
+
+.buy-item h3 {
+    text-align: center;
+    font-size: 26px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.buy-item .btn--buy {
+    text-align: center;
+}
+
+.buy-item .btn--buy a {
+    background-color: #007bff;
+    padding: 10px 25px;
+    display: block;
+    color: #fff;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 20px;
+    box-shadow: 0 0 70px 0px rgba(0, 123, 255, .5);
+}
+
+/*===============
+    7. FOOTER
+=================*/
+
+#footer {
+    position: relative;
+    background-color: #0c0c0c;
+    padding: 25px;
+    z-index: 1030;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.links a {
+    font-size: 23px;
+    padding: 20px;
+}
+
+.links a:last-child {
+    padding-right: 0;
+}
+
+.links a:nth-child(1):hover {
+    color: #4c75a3;
+}
+
+.links a:nth-child(2):hover {
+    color: #3b5998;
+}
+
+.links a:nth-child(3):hover {
+    color: #00acee;
+}
+
+.links a:nth-child(4):hover {
+    color: #0088cc;
+}
+
+.links a:nth-child(5):hover {
+    color: #f49c0f;
+}
+
+
+/*==================
+    8. ANIMATION
+====================*/
+
+@-webkit-keyframes sdb05 {
+    0% {
+        -webkit-transform: rotate(-45deg) translate(0, 0);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+        opacity: 0;
+    }
+}
+
+@keyframes sdb05 {
+    0% {
+        transform: rotate(-45deg) translate(0, 0);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(-45deg) translate(-20px, 20px);
+        opacity: 0;
+    }
+}
